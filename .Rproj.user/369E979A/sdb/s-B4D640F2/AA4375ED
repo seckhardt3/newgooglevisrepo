@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle: \"GoogleVis\"\nauthor: \"Sam Eckhardt\"\ndate: \"Tuesday, November 04, 2014\"\noutput: html_document\n---\n## Welcome to this simple html page with two google visualizations. \n\nHello, this should be fun. \n\n```{r setOptions, message=FALSE,echo=FALSE}\nlibrary(googleVis)\n#op <- options(gvis.plot.tag='chart')\n```\n\n\n## Histogram\n\n```{r results='asis'}\nset.seed(123)\ndatHist=data.frame(A=rpois(100, 20),\n                   B=rpois(100, 5),\n                   C=rpois(100, 50))\n\nHist <- gvisHistogram(datHist, options=list(\n  legend=\"{ position: 'top', maxLines: 2 }\",\n  colors=\"['#5C3292', '#1A8763', '#871B47']\",\n  width=750, height=360))\nplot(Hist)\nprint(Hist,file=\"hist.html\")\n```\nHistogram, much wow. \n\n<iframe src=\"hist.html\" width=\"800\" height=\"600\"></iframe>\n\n## Line Chart\n\n```{r results='asis'}\ndf=data.frame(country=c(\"US\", \"GB\", \"BR\"), \n              val1=c(10,13,14), \n              val2=c(23,12,32))\nLine <- gvisLineChart(df,options=list(width=750, height=500))\nplot(Line)\nprint(Line,file=\"line.html\")\n```\n<iframe src=\"line.html\" width=\"800\" height=\"600\"></iframe>\n",
+    "created" : 1415151665209.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2831393189",
+    "id" : "AA4375ED",
+    "lastKnownWriteTime" : 1415153030,
+    "path" : "~/SCHOOL/Senior Fall/MKTG 489/newgooglevisrepo/GoogleVis.rmd",
+    "project_path" : "GoogleVis.rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
